@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Empid:</b>
+  <%= @leave_avail.empID %>
+</p>
+
+<p>
+  <b>Leaveid:</b>
+  <%= @leave_avail.leaveID %>
+</p>
+
+<p>
+  <b>Leavedate:</b>
+  <%= @leave_avail.leaveDate %>
+</p>
+
+<p>
+  <b>Leavetakendayperiod:</b>
+  <%= @leave_avail.leaveTakenDayPeriod %>
+</p>
+
+
+<%= link_to 'Edit', edit_leave_avail_path(@leave_avail) %> |
+<%= link_to 'Back', leave_avails_path %>

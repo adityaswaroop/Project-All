@@ -1,0 +1,27 @@
+<h1>Listing Leave Definitions</h1>
+
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <th class="b">Leave Name</th>
+    <th class="btrb">Short Name</th>
+    <th class="btrb">Allotment</th>
+    <th class="btrb">Affect Salary</th>
+    <th class="btrb" colspan="3" style="width:200px">Operations</th>
+  </tr>
+
+<% @leave_definations.each do |leave_defination| %>
+  <tr>
+    <td class="blrb"><%= leave_defination.leave_name %></td>
+    <td class="brb"><%= leave_defination.short_name %></td>
+    <td class="brb"><%= leave_defination.allotment_yn %></td>
+    <td class="brb"><%= leave_defination.affect_sal_yn %></td>
+    <td class="brb"><%= link_to 'Show', leave_defination %></td>
+    <td class="brb"><%= link_to 'Edit', edit_leave_defination_path(leave_defination) %></td>
+    <td class="brb"><%= link_to 'Destroy', leave_defination, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Leave Definition', new_leave_defination_path %>

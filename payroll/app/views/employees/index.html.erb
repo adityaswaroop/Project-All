@@ -1,0 +1,27 @@
+<h1>Listing Employees</h1>
+
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <th class="b">Employee Name</th>
+    <th class="btrb">Date of Joining</th>
+    <th class="btrb">Salary Calculated From</th>
+    <th class="btrb">Confirmation Date</th>
+    <th class="btrb" colspan="3" style="width:200px">Operations</th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td class="blrb"><%= employee.empname %></td>
+    <td class="brb"><%= employee.doj %></td>
+    <td class="brb"><%= employee.salartCalcFrom %></td>
+    <td class="brb"><%= employee.confirmationDate %></td>
+    <td class="brb"><%= link_to 'Show', employee %></td>
+    <td class="brb"><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td class="brb"><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employee', new_employee_path %>

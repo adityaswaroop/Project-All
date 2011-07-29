@@ -1,0 +1,33 @@
+<%= form_for(@leave_defination) do |f| %>
+  <% if @leave_defination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leave_defination.errors.count, "error") %> prohibited this leave_defination from being saved:</h2>
+
+      <ul>
+      <% @leave_defination.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Leave Name<br />
+    <%= f.text_field :leave_name %>
+  </div>
+  <div class="field">
+    Short Name<br />
+    <%= f.text_field :short_name %>
+  </div>
+  <div class="field">
+    Allotment<br />
+    <%= f.check_box :allotment_yn %>
+  </div>
+  <div class="field">
+    Affect Salary<br />
+    <%= f.check_box :affect_sal_yn %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

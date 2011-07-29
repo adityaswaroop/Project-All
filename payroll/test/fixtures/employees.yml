@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+#  empname: MyString
+  doj: 2011-06-17
+  salartCalcFrom: 2011-06-17
+  confirmationDate: 2011-06-17
+
+two:
+  empname: MyString
+  doj: 2011-06-17
+  salartCalcFrom: 2011-06-17
+  confirmationDate: 2011-06-17

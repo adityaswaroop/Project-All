@@ -1,0 +1,33 @@
+<%= form_for(@leave_avail) do |f| %>
+  <% if @leave_avail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leave_avail.errors.count, "error") %> prohibited this leave_avail from being saved:</h2>
+
+      <ul>
+      <% @leave_avail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :empID %><br />
+    <%= f.number_field :empID %>
+  </div>
+  <div class="field">
+    <%= f.label :leaveID %><br />
+    <%= f.number_field :leaveID %>
+  </div>
+  <div class="field">
+    <%= f.label :leaveDate %><br />
+    <%= f.date_select :leaveDate %>
+  </div>
+  <div class="field">
+    <%= f.label :leaveTakenDayPeriod %><br />
+    <%= f.text_field :leaveTakenDayPeriod %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

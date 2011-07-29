@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Leave Name:</b>
+  <%= @leave_defination.leave_name %>
+</p>
+
+<p>
+  <b>Short Name:</b>
+  <%= @leave_defination.short_name %>
+</p>
+
+<p>
+  <b>Allotment:</b>
+  <%= @leave_defination.allotment_yn %>
+</p>
+
+<p>
+  <b>Affect Salary:</b>
+  <%= @leave_defination.affect_sal_yn %>
+</p>
+
+
+<%= link_to 'Edit', edit_leave_defination_path(@leave_defination) %> |
+<%= link_to 'Back', leave_definations_path %>

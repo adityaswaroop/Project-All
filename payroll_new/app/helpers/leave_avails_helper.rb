@@ -1,0 +1,2 @@
+module LeaveAvailsHelper
+end

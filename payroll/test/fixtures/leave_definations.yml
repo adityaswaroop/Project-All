@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  leave_name: MyString
+  short_name: MyString
+  allotment_yn: false
+  affect_sal_yn: false
+
+two:
+  leave_name: MyString
+  short_name: MyString
+  allotment_yn: false
+  affect_sal_yn: false

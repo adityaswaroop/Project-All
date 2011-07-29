@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employee name:</b>
+  <%= @employee.employee_name %>
+</p>
+
+<p>
+  <b>Doj:</b>
+  <%= @employee.doj %>
+</p>
+
+<p>
+  <b>Salary calculation date:</b>
+  <%= @employee.salary_calculation_date %>
+</p>
+
+<p>
+  <b>Confirmation date:</b>
+  <%= @employee.confirmation_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

@@ -1,0 +1,27 @@
+<h1>Listing leave_definitions</h1>
+
+<table>
+  <tr>
+    <th>Leave name</th>
+    <th>Allotment</th>
+    <th>Affect salary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leave_definitions.each do |leave_definition| %>
+  <tr>
+    <td><%= leave_definition.leave_name %></td>
+    <td><%= leave_definition.allotment %></td>
+    <td><%= leave_definition.affect_salary %></td>
+    <td><%= link_to 'Show', leave_definition %></td>
+    <td><%= link_to 'Edit', edit_leave_definition_path(leave_definition) %></td>
+    <td><%= link_to 'Destroy', leave_definition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Leave definition', new_leave_definition_path %>
