@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails relyonAuth: production" product="" version="" jdbc-version="" driver-version="" uuid="08ce4cd1-4166-46c1-94e5-54dc84eab100">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/relyonAuth_production</jdbc-url>
+    <user-name>postgres</user-name>
+    <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-driver-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-9.0-801.jdbc4.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails relyonAuth: development" product="PostgreSQL" version="9.1rc1" jdbc-version="4.0" driver-version="PostgreSQL 9.0 JDBC4 (build 801)" uuid="44846086-55fd-4d82-805d-80653adf7705">
+    <identifier-quote-string>"</identifier-quote-string>
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/relyonAuth_development</jdbc-url>
+    <user-name>postgres</user-name>
+    <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-driver-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-9.0-801.jdbc4.jar</url>
+      </library>
+    </libraries>
+    <table name="roles" schema="public" catalog="" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" default="nextval('roles_id_seq'::regclass)" />
+      <column name="role_type" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" />
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" />
+      <primary-key name="roles_pkey" columns="id" />
+    </table>
+    <table name="roles_id_seq" schema="public" catalog="" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12" />
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7" />
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7" />
+    </table>
+    <table name="schema_migrations" schema="public" catalog="" type="TABLE">
+      <column name="version" sqlType="varchar" length="255" precision="0" nullable="false" jdbcType="12" />
+      <index name="unique_schema_migrations" unique="true" columns="version" />
+    </table>
+    <table name="users" schema="public" catalog="" type="TABLE">
+      <column name="id" sqlType="serial" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" default="nextval('users_id_seq'::regclass)" />
+      <column name="name" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="email" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="username" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="password" sqlType="varchar" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="created_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" />
+      <column name="updated_at" sqlType="timestamp" length="29" precision="6" nullable="true" jdbcType="93" />
+      <primary-key name="users_pkey" columns="id" />
+    </table>
+    <table name="users_id_seq" schema="public" catalog="" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" length="2147483647" precision="0" nullable="false" jdbcType="12" />
+      <column name="last_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="start_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="increment_by" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="max_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="min_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="cache_value" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="log_cnt" sqlType="int8" length="19" precision="0" nullable="false" jdbcType="-5" />
+      <column name="is_cycled" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7" />
+      <column name="is_called" sqlType="bool" length="1" precision="0" nullable="false" jdbcType="-7" />
+    </table>
+  </data-source>
+  <data-source source="LOCAL" name="Rails relyonAuth: test" product="" version="" jdbc-version="" driver-version="" uuid="76890902-a6d0-4a39-acf2-904b73c97237">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql://127.0.0.1:5432/relyonAuth_test</jdbc-url>
+    <user-name>postgres</user-name>
+    <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-driver-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/postgresql-9.0-801.jdbc4.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

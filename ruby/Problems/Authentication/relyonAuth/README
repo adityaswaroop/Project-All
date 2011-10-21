@@ -1,0 +1,105 @@
+##### Welcome to Relyon Authorization System #####
+
+Relyon Authorization System is a system which deals with the User Registration and Authorize Login for existing users.
+In this system, if users comes first time to the site then he/she must have to register with validated field.
+So on Registration Page, there are five mandatory fields namely:
+
+1) Name (should contain Alphanumeric characters without any special characters):
+2) Email Address (should have in proper Email format, should be unique means not exist in DB):
+3) Username (should only contain letters, numbers, or .-_@, should be unique means not exist in DB):
+4) Password (length should not be less that 6 characters):
+5) Confirm Password (should match with the password which is given above):
+
+When user enters all the above field correctly then he/she will be created as authorized user and will redirect to
+"Index Page" with logged in session.
+
+Then user may terminate his/her session by clicking Logout link.
+
+Next time when user comes, if he/she is authenticated user means he/she registered to the site previously then he/she
+can login to the site by giving proper Username or Email with correct password.
+
+If user enter wrong information either in Username or Password, then system will show the proper message to user that
+"Invalid Username or Password" and should not be redirected to "Index Page".
+
+########  Relyon Authorization System -- Workflow  ########
+
+When user hits the Relyon Authorization System, he/she has to access the login page first,
+URL : http://localhost:3000
+which displays the Login Page with two input fields
+Username :
+Password :
+
+Case 1)
+If user is already register then he/she needs to input the two fields like:
+
+Username : aditya
+Passward : aditya
+
+After clicking Submit button it takes parameters as,
+params[:username,:password]
+with
+method[:post]
+calls
+authenticate(username,password)
+which allows user to logged in to site.
+
+Result 1)
+If he/she is valid user then it will redirect to URL : http://localhost:3000/welcome
+which is basically the page which is displayed when user is authorized.
+
+Result 2)
+If he/she is invalid user then it will redirect to URL : http://localhost:3000, with error message "Invalid Username or
+Password".
+
+Case 2)
+If user is not registered to the site then he/she needs to follows the link named "Sign Up", which will redirect to the
+URL : http://localhost:3000/user/register
+which display the Registration Page with five input fields
+Name :
+Email :
+Username :
+Password :
+Confirm Password :
+
+so, user need to fill the details like :
+
+Name : Aditya Swaroop
+Email : adi@gmail.com
+Username : aditya
+Password : aditya
+Confirm Password : aditya
+
+After clicking Submit button it takes parameters as,
+params[:name,:email,:username,:password]
+with
+method[:post]
+calls
+create_user(:params)
+which basically first checks the uniqueness for username and email,
+
+If the entered username or email found in database then it will redirect to URL : http://localhost:3000/user/register,
+with error message "Username is already been taken".
+
+and if username is unique then it calls
+
+authenticate(username,password) method
+which allows user to logged in to site.
+
+Result 1)
+It will redirect to URL : http://localhost:3000/welcome ,
+which is basically the page which is displayed when user is authorized
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

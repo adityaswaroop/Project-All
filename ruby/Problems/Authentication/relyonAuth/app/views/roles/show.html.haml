@@ -1,0 +1,11 @@
+%h1 Roles
+%table{:cellpadding => "0", :cellspacing => "0", :width => "200px", :border => "1px solid #000000"}
+  %tr
+    %td{:width => "100px"}
+      Role Type
+    %td{:width => "100px"}
+      Operations
+  %tr
+    %td{:width => "100px"}= @role.role_type
+    %td{:width => "100px"}
+      = link_to 'Edit', edit_role_path(@role)
