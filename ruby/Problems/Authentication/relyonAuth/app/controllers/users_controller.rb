@@ -18,18 +18,19 @@ class UsersController < ApplicationController
   def roles_assign
     @users = User.all
     @roles = Role.all
-    if params[:role]
+    if params[:users]
       @users.each do |user|
         user.roles.clear
       end
-      params[:role].each do |role_send|
-        role_send_split = role_send.split('.')
-        role_id = role_send_split[0]
-        user_id = role_send_split[1]
-        @user = User.find(user_id)
-        @role = Role.find(role_id)
-        @user.roles << @role
+
+      params[:users].each do |user|
+        if user[:role]
+          @user = User.find(user[:id])
+          @role = Role.find(user[:role])
+          @user.roles << @role
+        end
       end
+
       redirect_to users_roles_assign_path, :notice => "Successfully updated."
     end
   end

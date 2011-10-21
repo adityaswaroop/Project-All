@@ -9,20 +9,12 @@
     - @users.each do |user|
       %tr
         %td{:width => "100px"}= user.name
+        = hidden_field_tag("users[][id]", user.id)
         - @roles.each do |role|
-          %td{:width => "5px"}= check_box_tag("role[]","#{role.id}.#{user.id}", user.roles.include?(role))
+          %td{:width => "5px"}= check_box_tag("users[][role][]",role.id, user.roles.include?(role))
           %td{:width => "95px"}= label_tag(:role, "#{role.role_type}")
 
     %tr
       %td
         = submit_tag("Update")
 
--#<input type="text" name="users[][id]" value="0"/>
--#<input type="text" name="users[][role][]" value="1"/>
--#<input type="text" name="users[][role][]" value="2"/>
--#
--#<input type="text" name="users[][id]" value="1"/>
--#<input type="text" name="users[][role][]" value="4"/>
--#<input type="text" name="users[][role][]" value="3"/>
--#
--#users => [{:id => "0", :role => ["1","2"]},{:id => "1", :role => ["4","3"]}]
