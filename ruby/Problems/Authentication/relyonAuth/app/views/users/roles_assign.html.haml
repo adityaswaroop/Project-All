@@ -11,7 +11,7 @@
         %td{:width => "100px"}= user.name
         = hidden_field_tag("users[][id]", user.id)
         - @roles.each do |role|
-          %td{:width => "5px"}= check_box_tag("users[][role][]",role.id, user.roles.include?(role))
+          %td{:width => "5px"}= check_box_tag("users[][roles][]",role.id, user.roles.include?(role))
           %td{:width => "95px"}= label_tag(:role, "#{role.role_type}")
 
     %tr

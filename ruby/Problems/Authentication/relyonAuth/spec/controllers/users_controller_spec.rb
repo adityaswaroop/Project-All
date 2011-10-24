@@ -55,19 +55,19 @@ describe UsersController do
     end
 
     it "should find user with user_id" do
-      get :roles_assign, :users => Array[:id => @user.id, :role => @role.id]
+      get :roles_assign, :users => [{:id => @user.id, :roles => [@role.id]}]
       assigns(:user).should == @user
-      assigns(:role).should == @role
+      assigns(:roles).should == [@role]
     end
 
     it "should create new user role" do
       expect {
-        get :roles_assign, :users => Array[:id => @user.id, :role => @role.id]
+        get :roles_assign, :users => [{:id => @user.id, :roles => [@role.id]}]
       }.to change(@user.roles, :count).by(1)
     end
 
     it "redirects to the role assign page" do
-      get :roles_assign, :users => Array[:id => @user.id, :role => @role.id]
+      get :roles_assign, :users => [{:id => @user.id, :roles => [@role.id]}]
       response.should redirect_to(users_roles_assign_path)
     end
   end

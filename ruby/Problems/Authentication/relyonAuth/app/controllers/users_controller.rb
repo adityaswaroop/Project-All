@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       session[:user_id] = @user.id
       redirect_to landing_path, :notice => "Thank you for signing up! You are now logged in."
     else
@@ -19,15 +20,10 @@ class UsersController < ApplicationController
     @users = User.all
     @roles = Role.all
     if params[:users]
-      @users.each do |user|
-        user.roles.clear
-      end
-
       params[:users].each do |user|
-        if user[:role]
+        if user[:roles]
           @user = User.find(user[:id])
-          @role = Role.find(user[:role])
-          @user.roles << @role
+          @user.roles = Role.find(user[:roles])
         end
       end
 
